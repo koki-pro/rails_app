@@ -13,8 +13,19 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="notification alert alert-info">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="notification alert alert-danger">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+
     <%= yield %>
   </body>
 </html>
-<a href="#" class="btn btn-success">ボタン</a>
-
