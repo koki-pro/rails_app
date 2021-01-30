@@ -32,10 +32,16 @@
       <h1 style="font-family: cursive;">BOOK-APP</h1>
     <% end %>
     <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-dark" do %>
+      <%= link_to users_path, class: "btn btn-dark mr-3" do %>
+        <i class="fas fa-book-reader mr-1"></i>ユーザー一覧
+      <% end %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-dark mr-3" do %>
         <i class="fas fa-sign-out-alt mr-1"></i>ログアウト
       <% end %>
     <% else %>
+      <%= link_to users_path, class: "btn btn-dark mr-3" do %>
+        <i class="fas fa-book-reader mr-1"></i>ユーザー一覧
+      <% end %>
       <%= link_to new_user_session_path, class: "btn btn-dark mr-3" do %>
         <i class="fas fa-sign-in-alt mr-1"></i>ログイン
       <% end %>
